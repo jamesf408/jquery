@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+	<title>jQuery Exercise</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/flick/jquery-ui.min.css" />
+	<script type="text/javascript">
+		//run the following functions/stuff when the document is ready
+		$(document).ready(function() {
+			$('h1').click(function(){
+				$('h2').slideToggle('slow');
+			});
+			$('input').focus(function(){
+				$(this).next('span').fadeIn().css('display', 'inline');
+			});
+			$('input').change(function(){
+					$('span').css('display', 'none');
+				});
+			$('.fun li').click(function() {
+				$(this).hide();
+			});
+			$('.morefun').sortable();
+			$('.datepicker').datepicker();
+			$('.mytabs').tabs();
+			$('.mydialog').dialog();
+			$('.myaccordion').accordion();
+			$('.dragme').draggable();
+		});
+	</script>
+	<style type="text/css">
+		.hiding span {display: none;
+			padding-left: 10px;
+			font-size: .7em;
+			color: #999999;
+		}
+	</style>
+</head>
+<body>
+	<h1>Main Heading</h1>
+	<p>This is a paragraph</p>
+	<h2>Secondary heading</h2>
+	<div class="dragme"><p>DRAG ME</p></div>
+	<p class="second">this is the second paragraph</p>
+		<h1>Main Heading</h1>
+	<p>This is a paragraph</p>
+	<h2>Secondary heading</h2>
+	<form>
+  <p class="hiding"><input id="target" type="text" placeholder="Field 1"><span>(i.e. James)</span></p>
+  <p class="hiding"><input type="text" placeholder="Field 2"><span>youremail@domain.com</span></p>
+</form>
+<div id="other">
+<p>Click and delete</p>	
+  <ul class="fun">
+  	<li>Text</li>
+  	<li>Text</li>
+  	<li>Text</li>
+  	<li>Text</li>
+  	<li>Text</li>
+  </ul>
+  <p>Sort list</p>
+  <ul class="morefun">
+  	<li>Text1</li>
+  	<li>Text2</li>
+  	<li>Text3</li>
+  	<li>Text4</li>
+  	<li>Text5</li>
+  </ul>
+</div>
+<label for="date">Date:</label> <input type="text" name="date" class="datepicker" />
+
+<div class="mytabs">
+	<ul>
+		<li><a href="#tab1">Tab 1</a></li>
+		<li><a href="#tab2">Tab 2</a></li>
+		<li><a href="#tab3">Tab 3</a></li>
+	</ul>
+	<div id="tab1">
+		<p>So much content</p>
+	</div>
+	<div id="tab2">
+		<p>So much more content</p>
+	</div>
+	<div id="tab3">
+		<p>Even more content</p>
+	</div>
+</div>
+<div class="myaccordion">
+	<h2>ONE</h2>
+	<div id="acc1">
+		<p>So much content</p>
+	</div>
+	<h2>TWO</h2>
+	<div id="acc2">
+		<p>So much more content</p>
+	</div>
+	<h2>THREE</h2>
+	<div id="acc3">
+		<p>Even more content</p>
+	</div>
+</div>
+<div class="mydialog">
+	<p>OMG, put down the mouse!</p>
+</div>
+</body>
+</html>
