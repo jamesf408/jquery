@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CheapAir Airlines</title>
+	<meta name="description" content="The cheapest airfare around.">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="cheapair.css">
+</head>
+<body>
+	<div class="welcome" title="Welcome to CheapAir">
+		<p><a href="#"><span class="glyphicon glyphicon-cloud-download"></span> Download our disclaimer</a>
+	</div>
+	<nav class="navbar navbar-default nav-style" role="navigation">
+	  <!-- Brand and toggle get grouped for better mobile display -->
+	  <div class="navbar-header">
+	    <a class="navbar-brand" href="#">Cheap<span class="glyphicon glyphicon-plane"></span>Air</a>
+	  </div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div id="tabs" class="well well-lg col-md-5">
+				<ul>
+				    <li><a href="#check_flights">Flight <span class="glyphicon glyphicon-plane"></span></a></li>
+				    <li><a href="#check_hotel">Hotel <span class="glyphicon glyphicon-home"></span></a></li>
+				    <li><a href="#check_car">Car <span class="glyphicon glyphicon-road"></span></a></li>
+				</ul>
+				<div id="check_flights">
+					<form id="flights" role="form" action="" method="post" class="form-horizontal well well-lg flight">
+						<h2>Check Flights</h2>
+						<div class="input-group input-group-sm">
+							<label for="start_loc" class="input-group">
+							<input type="text" id="start_loc" name="start_loc" class="form-control" placeholder="Departure City">
+							<span class="input-group-addon glyphicon glyphicon-map-marker"></span>
+							</label>
+						</div>
+						<div class="input-group input-group-sm">
+							<label for="start_date" class="input-group">
+							<input type="text" id="start_date" name="start_date" class="form-control date" placeholder="Departure Date">
+							<span class="input-group-addon glyphicon glyphicon-calendar"></span>
+							</label>
+						</div>
+						<hr>
+						<div class="input-group input-group-sm">
+							<label for="end_loc" class="input-group">
+							<input type="text" id="end_loc" name="end_loc" class="form-control" placeholder="Arrival City">
+							<span class="input-group-addon glyphicon glyphicon-map-marker"></span>
+							</label>
+						</div>
+						<div class="input-group input-group-sm">
+							<label for="end_date" class="input-group">
+							<input type="text" id="end_date" name="end_date" class="form-control date" placeholder="Arrival Date">
+							<span class="input-group-addon glyphicon glyphicon-calendar"></span>
+							</label>
+							<hr>
+							<button class="btn btn-default">Check Flights <span class="glyphicon glyphicon-plane"></span></button>
+						</div>
+					</form>
+				</div>
+				<div id="check_hotel">
+					<form id="hotels" role="form" action="" method="post" class="form-horizontal well well-lg flight">
+						<div class="input-group input-group-sm">
+							<label for="hotel_loc" class="input-group">
+							<input type="text" id="hotel_loc" name="hotel_loc" class="form-control" placeholder="Hotel City">
+							<span class="input-group-addon glyphicon glyphicon-map-marker"></span>
+							</label>
+						</div>
+						<hr>
+						<div class="input-group input-group-sm">
+							<label for="checkin" class="input-group">
+							<input type="text" id="checkin" name="checkin" class="form-control date" placeholder="Check In">
+							<span class="input-group-addon glyphicon glyphicon-calendar"></span>
+							</label>
+						</div>
+						<div class="input-group input-group-sm">
+							<label for="checkout" class="input-group">
+							<input type="text" id="checkout" name="checkout" class="form-control date" placeholder="Checkout">
+							<span class="input-group-addon glyphicon glyphicon-calendar"></span>
+							</label>
+							<hr>
+							<button class="btn btn-default">Check Availability <span class="glyphicon glyphicon-home"></span></button>
+						</div>
+					</form>
+				</div><!-- check_hotels -->
+				<div id="check_car">
+					<form id="cars" role="form" action="" method="post" class="form-horizontal well well-lg flight">
+						<div class="input-group input-group-sm">
+							<label for="car_type" class="input-group">
+							<select name="car_type" id="car_type" class="form-control">
+								<option value="compact">Compact</option>
+								<option value="economy">Economy</option>
+								<option value="midsize">Mid-size</option>
+								<option value="luxury">Luxury</option>
+								<option value="suv">SUV</option>
+							</select>
+							</label>
+						</div>
+						<div class="input-group input-group-sm">
+							<label for="car_pickup" class="input-group">
+							<input type="text" id="car_pickup" name="car_pickup" class="form-control" placeholder="Pickup Location">
+							<span class="input-group-addon glyphicon glyphicon-map-marker"></span>
+							</label>
+						</div>
+						<div class="input-group input-group-sm">
+							<label for="car_dropoff" class="input-group">
+							<input type="text" id="car_dropoff" name="car_dropoff" class="form-control" placeholder="Dropoff Location">
+							<span class="input-group-addon glyphicon glyphicon-map-marker"></span>
+							</label>
+						</div>
+						<hr>
+						<div class="input-group input-group-sm">
+							<label for="car_pickup_date" class="input-group">
+							<input type="text" id="car_pickup_date" name="car_pickup_date" class="form-control date" placeholder="Pickup Date">
+							<span class="input-group-addon glyphicon glyphicon-calendar"></span>
+							</label>
+						</div>
+						<div class="input-group input-group-sm">
+							<label for="car_dropoff_date" class="input-group">
+							<input type="text" id="car_dropoff_date" name="car_dropoff_date" class="form-control date" placeholder="Dropoff Date">
+							<span class="input-group-addon glyphicon glyphicon-calendar"></span>
+							</label>
+							<hr>
+							<button class="btn btn-default">Check Availability <span class="glyphicon glyphicon-road"></span></button>
+						</div>
+					</form>
+				</div><!-- check_cars -->
+			</div><!-- tabs -->
+			<div id="accordion" class="col-md-7" >
+				<h3>FALL DEALS</h3>
+				<div>
+					<p>Finding your way to great destinations is that much easier when you take advantage of these great fall deals.</p>
+					<p>China $19.99 roundtrip</p>
+					<p>Greenland $4.99 roundtrip</p>
+					<p>Antartica $0.99 roundtrip</p>
+				</div>
+				<h3>Taking Off</h3>
+				<div>
+					<p><b>Need a little digital diversion?&nbsp; Break for our brand new blog to find virtual vistas, foodie finds, travel tips and more.&nbsp; You can even submit your own travel photos to share your CheapAir journey.</b></p>
+					<p><a href="#">Check it out</a></p>
+				</div>
+				<h3>Privacy</h3>
+				<div>
+					<p>Date effective: January 7, 2013</p>
+					<p>This Privacy Policy describes our practices related to the use, storage and disclosure of information we collect from or about you in the course of providing commercial air travel services at CheapAir.com and through our Fly CheapAir App.   CheapAir reserves the right to modify this Privacy Policy at any time and without prior notice. We will post any changes on delta.com so please check regularly for the most recent version of our Privacy Policy. This Privacy Policy is not a contract and does not create any legal rights or obligations.</p>
+					<p>If you have any further questions or comments, contact us using the Email Us page.</p>
+				</div>
+			</div><!-- accordion -->
+		</div><!-- row -->
+	</div><!-- container -->
+	<div class="row">
+		<div class="footer col-md-12">
+			<p>Other random information</p>
+		</div>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.date').datepicker();
+			$('.welcome').dialog();
+			$('#tabs').tabs();
+			$('#accordion').accordion({
+				heightStyle: "content"
+			});
+		});
+	</script>
+</body>
+</html>

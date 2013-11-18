@@ -1,0 +1,34 @@
+body {
+	background: url(_img/cloud-airplane.jpg);
+}
+form.flight ul li {
+	margin-top: 0;
+	text-transform:uppercase;
+	font-size: .9em;
+	color: #32639d;
+}
+form.flight {
+	background: transparent;
+	border:transparent;
+}
+#tabs {
+	background: rgba(255,255,255,0.8);
+}
+.ui-widget-header {
+	background: none;
+	border:none;
+	border-bottom: 1px solid #cccccc;
+}
+.nav-style, .footer {
+	background: rgba(255,255,255,0.8);		
+}
+.ui-state-default {
+	text-transform: uppercase;
+}
+.footer {
+	padding: 20px;
+	margin-top: 20px;
+}
+.footer p {
+	margin: 0;
+}
