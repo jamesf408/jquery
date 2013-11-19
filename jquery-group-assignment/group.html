@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"><head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<style type="text/css">
+		body {
+			background-color: black;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-image: none;
+		}
+
+		h1 {
+			color: orange;
+			font-size: 24px;
+		}
+
+		.modal {
+			width: 210px;
+			height: 150px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -100px 0 0-150px;
+			background-color: rgba(50,50,50,.6);
+			border-radius: 10px;
+			text-align: center;
+			font-family: verdana;
+		}
+
+		.player1 img, .player2 img {
+			height: 200px;
+			width: 100px;
+		}
+
+		.player1 {
+			position: absolute;
+			bottom: 80px;
+			left: 200px;
+		}
+
+		.player2 {
+			position: absolute;
+			bottom: 80px;
+			right: 200px;
+		}
+
+	</style>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var p1_sel = false;
+		var p2_sel = false;
+
+		$('#player-form').hide();
+		var cur_bgnd = $('body').css('background-image');
+    	$('button').mouseenter(function(){
+    		var attribute = $(this).attr('id');
+        	$('body').css({'background-image':'url(arena/'+attribute +'.jpg)'});
+    
+    	});
+
+    	$('button').mouseleave(function(){
+    		$('body').css('background-image', cur_bgnd);
+    	});	
+
+    	$('button').click(function(){
+    		cur_bgnd = $('body').css('background-image');
+    		var attribute = $(this).attr('id');
+        	$('body').css('background-image', cur_bgnd);
+        	$('#player-form').fadeIn("slow");
+        	$('#arena-form').hide();
+        	return false;
+    	});
+
+    	$('#player1, #player2').prop("selectedIndex", -1);
+
+    	$('#player1').change(function(){
+    		var player1 = $(this).val();
+    		$('.player1').html('<img src="player/'+player1 +'.png">');
+    		p1_sel = true;
+    	});
+
+    	$('#player2').change(function(){
+    		var player2 = $(this).val();
+    		$('.player2').html('<img src="player/'+player2 +'.png">');
+    		p2_sel = true;
+    		if (p1_sel && p2_sel) {
+    			$('.modal').fadeOut('slow');
+    		}
+    	});
+    	
+
+	});
+	</script>
+</head>
+<body>
+    <div class="container">
+		<div class="modal">
+			<form id="arena-form" action="">
+				<h1>Select Arena</h1>
+                <button id="beach">beach</button>
+                <button id="planet">planet</button>
+                <button id="dojo">dojo</button>
+                <button id="forest">forest</button>
+                <button id="matrix">matrix</button>
+                <button id="snow">snow</button>
+            </form>
+            <form id="player-form" action="">
+            	<h1>Select Player</h1>
+               <select id="player1">
+                       <option value="yellow">Yellow Ninja</option>
+                       <option value="white">White Ninja</option>
+                       <option value="black">Black Ninja</option>
+                       <option value="green">Green Ninja</option>
+                       <option value="red">Red Ninja</option>
+                       <option value="leo">Leo Ninja</option>
+               </select>
+               <select id="player2">
+                       <option value="yellow">Yellow Ninja</option>
+                       <option value="white">White Ninja</option>
+                       <option value="black">Black Ninja</option>
+                       <option value="green">Green Ninja</option>
+                       <option value="red">Red Ninja</option>
+                       <option value="leo">Leo Ninja</option>
+               </select>
+                       </form>
+		</div>
+		<div class="player1"></div>
+		<div class="player2"></div>
+
+	
+	</div>
+</body>
+</html>
