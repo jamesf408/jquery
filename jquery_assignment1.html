@@ -4,10 +4,181 @@
 	<meta charset="UTF-8">
 	<title>jQuery Assignment 1 - James F</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+	<style>
+		li {
+			cursor: pointer;
+		}
+
+		.red {
+			color: #ff0000;
+		}
+		span {
+			margin-left: 10px;
+			color: blue;
+		}
+	</style>
+	<script>
+		$(document).ready(function() {
+			$('#bt1').click(function(){
+				$('p.first').addClass('red');
+			});
+			$('#bt2').click(function(){
+				$('p.second').after('<p>.after: Paragraph added by jQuery</p>');
+			});
+			$('#bt3').click(function(){
+				$('p.third').append('&nbsp;text appended to this paragraph');
+			});
+			$('#bt4').click(function(){
+				$('p.fourth').attr('title', 'attr');
+				$('p.fourth').text('title="' + $('p.fourth').attr('title') + '"');
+			});
+			$('#bt5').click(function(){
+				$('p.fifth').before('This text is before the paragraph');
+			});
+			$('#bt6').click(function(){
+				$('p.sixth').html('<strong>This text replaces the text</strong>');
+			});
+			$('#bt7').click(function(){
+				$('p.seventh').text('This text replaces the text');
+			});
+			$('#bt8').click(function(){
+				$('p.eighth').text($('#eighth').val());
+			});
+			$('#bt9').click(function(){
+				$('.ninth').toggle('fast');
+			});
+			$('#bt10').click(function(){
+				$('.tenth').hide();
+			});
+			$('#bt100').click(function(){
+				$('.tenth').show();
+			});
+			$('#bt11').click(function(){
+				$('.eleventh').slideUp();
+			});
+			$('#bt110').click(function(){
+				$('.eleventh').slideDown();
+			});
+			$('#bt12').click(function(){
+				$('.twelfth').slideToggle();
+			});
+			$('#bt13').click(function(){
+				$('.thirteenth').fadeOut(800);
+			});
+			$('#bt130').click(function(){
+				$('.thirteenth').fadeIn(800);
+			});
+			$( "#form1" ).submit(function( someparameter ) {
+  				if ( $( "#fourteenth" ).val()) {
+    				$( "p.inputtext" ).text( $('#fourteenth').val());
+    				return false;
+  				}
+ 				return false;
+				});
+			$('#btn15').click(function(){
+				var txt = $('#form2').serialize();
+				$('p.fifteenth').text(txt);
+				return false;
+			});
+			$('#btn16').click(function(){
+				$(this).val('I was clicked');
+			});
+			$('.focused').focus(function(){
+				$(this).after('<span>Im in focus</span>');
+				$('span').fadeOut(1000);
+			});
+			$('.focused').blur(function(){
+				$(this).after('<span>Goodbye</span>');
+				$('span').fadeOut(1000);
+			});
+		});
+	</script>
 </head>
 <body>
-	<p>Build a webpage that uses the following jquery functions: .addclass, .after, .append, .attr, .before, .html, .text, .val, .toggle, .hide, .show, .slideDown, .slideToggle, .slideUp, .fadeOut, .fadeIn, .submit, .serialize, .focus, .click. After you build this program, upload your codes below.</p>
-
+	<p class="first">Using .addClass('red')</p>
+	<button id="bt1">.addClass()</button>
+	<hr>
 	
+	<p class="second">Using .after('&lt;p&gt;.after: Paragraph added by jQuery&lt;/p&gt;')</p>
+	<button id="bt2">.after();</button>
+	<hr>
+	
+	<p class="third">Using .append('text appended to this paragraph')</p>
+	<button id="bt3">.append()</button>
+	<hr>
+	
+	<p class="fourth">.attr('title', 'attr')</p>
+	<button id="bt4">.attr()</button>
+	<hr>
+	
+	<p class="fifth">.before('This text is before the paragraph')</p>
+	<button id="bt5">.before()</button>
+	<hr>
+	
+	<p class="sixth">This text will be replaced with .html('&lt;strong&gt;This text replaces the text&lt;/strong&gt;')</p>
+	<button id="bt6">.html()</button>
+	<hr>
+	
+	<p class="seventh">This text will be replaced with .text('This text replaces the text')</p>
+	<button id="bt7">.text()</button>
+	<hr>
+	
+	<p class="eighth">This text will be replaced with .val() of the select menu</p>
+	<select name="eighth" id="eighth">
+		<option>My Option 1</option>
+		<option>My Option 2</option>
+	</select>
+	<button id="bt8">.val()</button>
+	<hr>
+	
+	<p>Using .toggle() to show and hide the list</p>
+	<ul class="ninth">
+		<li>List 1</li>
+		<li>List 2</li>
+		<li>List 3</li>
+	</ul>
+	<button id="bt9">.toggle()</button>
+	<hr>
+
+	<p class="tenth">Using .hide() to hide this paragraph</p>
+	<button id="bt10">.hide()</button>
+	<button id="bt100">.show()</button>
+	<hr>
+
+	<p class="eleventh">Using .slideDown() and .slideUp() to hide and show this paragraph</p>
+	<button id="bt11">.slideUp()</button>
+	<button id="bt110">.slideDown()</button>
+	<hr>
+
+	<p class="twelfth">Using .slideToggle() hide and show this paragraph</p>
+	<button id="bt12">.slideToggle()</button>
+	<hr>
+	
+	<p class="thirteenth">Using .fadeIn() and .fadeOut() to hide and show this paragraph</p>
+	<button id="bt13">.fadeOut()</button>
+	<button id="bt130">.fadeIn()</button>
+	<hr>
+
+	<p class="inputtext">My text will change after submit is executed</p>
+	<form id="form1" action="">
+		<input type="text" name="fourteenth" id="fourteenth">
+		<input type="submit" value=".submit()"></input>
+	</form>
+	<hr>
+
+	<form id="form2" action="" method="get">
+		<input type="text" name="fname" id="fifteenth">
+		<input type="text" name="lname" id="fifteenth1">
+		<input type="checkbox" name="subscribe" id="fifteenth2" checked="checked">
+		<button id="btn15">.serialize()"></button>
+		<p class="fifteenth"></p>	
+	</form>
+	<hr>
+
+	<input id="btn16" type="button" value="Click me">
+	<hr>
+
+	<input type="text" class="focused" placeholder="click in here">
 </body>
 </html>

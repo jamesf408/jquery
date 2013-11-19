@@ -7,6 +7,19 @@
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="cheapair.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.date').datepicker();
+			$('.welcome').dialog();
+			$('#tabs').tabs();
+			$('#accordion').accordion({
+				heightStyle: "content"
+			});
+		});
+	</script>
 </head>
 <body>
 	<div class="welcome" title="Welcome to CheapAir">
@@ -153,18 +166,5 @@
 			<p>Other random information</p>
 		</div>
 	</div>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$('.date').datepicker();
-			$('.welcome').dialog();
-			$('#tabs').tabs();
-			$('#accordion').accordion({
-				heightStyle: "content"
-			});
-		});
-	</script>
 </body>
 </html>
