@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Assignment 2 - Intermediate II - James</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<style>
+		#dragarea {
+			width: 175px;
+			height: 285px;
+			border:1px solid black;
+			overflow: hidden;
+		}
+		ul {
+			list-style-type: none;
+			margin:0;
+			padding: 0;
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			var image = $('#dragarea img');
+			$('#dragarea').sortable();
+			image.dblclick(function(){
+			});
+		});
+	</script>
+</head>
+<body>
+	<div >
+		<ul id="dragarea">
+			<li><img src="_img/jquery-ninja_01.jpg" alt="ninja1"></li>
+			<li><img src="_img/jquery-ninja_02.jpg" alt="ninja2"></li>
+			<li><img src="_img/jquery-ninja_03.jpg" alt="ninja3"></li>
+			<li><img src="_img/jquery-ninja_04.jpg" alt="ninja4"></li>
+			<li><img src="_img/jquery-ninja_05.jpg" alt="ninja5"></li>
+		</ul>
+	</div>
+</body>
+</html>
