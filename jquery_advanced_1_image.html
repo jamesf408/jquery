@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Advanced Assignment 1 - James</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<style>.hide{display:none;}.image-replace{width: 200px;height: 200px; position:relative;float: left;}.image-replace img{position: absolute;top: 0;left: 0;}</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.image-replace').hover(
+				function(){
+					$(this).find('img').eq(1).fadeIn(600).toggleClass('hide');
+			},
+				function(){
+					$(this).find('img').eq(1).fadeOut(600).toggleClass('hide');
+				}
+			);
+		});
+	</script>
+</head>
+<body>
+	<div class="image-replace">
+		<img src="advance_img/comp_1.jpg" alt="1">
+		<img class="hide" src="advance_img/comp_2.jpg" alt="2">
+	</div>
+	<div class="image-replace">
+		<img src="advance_img/comp_1.jpg" alt="1">
+		<img class="hide" src="advance_img/comp_2.jpg" alt="2">
+	</div>
+	<div class="image-replace">
+		<img src="advance_img/comp_1.jpg" alt="1">
+		<img class="hide" src="advance_img/comp_2.jpg" alt="2">
+	</div>
+</body>
+</html>

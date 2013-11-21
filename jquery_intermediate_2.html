@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Assignment 2 - Intermediate - James</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<style>body {background-color: #fdfdfd;} input[type=submit]{margin-top: 10px;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$('.date').datepicker();
+			$('#form1').submit(function(){
+				$('.dateupdate1').text('From: ' + $('#date1').val());
+				$('.dateupdate2').text('To: ' + $('#date2').val());
+				return false;
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="alert alert-success col-md-3">
+				<p class="dateupdate1"></p>
+				<p class="dateupdate2"></p>
+			</div>
+		</div>
+		<div class="row">
+			<form action="" id="form1" class="col-md-3">
+				<label for="date1">From: </label><input type="text" name="date1" id="date1" class="form-control date">
+				<label for="date2">To: </label><input type="text" name="date2" id="date2" class="form-control date">
+				<input type="submit" value="Check Dates" class="btn btn-primary">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

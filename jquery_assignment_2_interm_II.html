@@ -23,8 +23,15 @@
 		$(document).ready(function(){
 			$('#dragarea').sortable();
 
-			$('.image-swap').click(function(){
-				$(this).attr('src', '_img/cat-' + $(this).attr('alt') + '.jpg');
+			// $('.image-swap').click(function(){
+			// 	$(this).attr('src', '_img/cat-' + $(this).attr('alt') + '.jpg');
+			// });
+			$('img').on({'click': function() {
+         		var src = ($(this).attr('src') === '_img/ninja-' + $(this).attr('alt') + '.jpg')
+            	? '_img/cat-' + $(this).attr('alt') + '.jpg'
+    			: '_img/ninja-' + $(this).attr('alt') + '.jpg';
+         		$(this).attr('src', src);
+			    }
 			});
 
 		});

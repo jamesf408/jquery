@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RegEx</title>
+</head>
+<body>
+<script type="text/javascript">
+
+function RegexEmail(emailInputBox){    
+   var emailStr = document.getElementById(emailInputBox).value;  
+   var emailRegexStr = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+   var isvalid = emailRegexStr.test(emailStr); 
+ 
+   if (!isvalid) {
+ alert('Invalid email address!');
+ emailInputBox.focus;
+ }
+ }
+
+</script>
+
+<form name="myform">
+<input name="emailInput" id="emailInput" maxlength="60" />
+<input id="btn1" type="button" value="Validate Email" onclick="return RegexEmail('emailInput')" />
+
+</form>
+</body>
+</html>
